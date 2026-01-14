@@ -328,10 +328,11 @@ public class T1 {
 ```java
 import java.io.PrintStream;
 import java.util.Scanner;
-public class Task3 {
+public class T3 {
     public static Scanner in = new Scanner(System.in);
     public static PrintStream out = System.out;
     public static void main(String[] args) {
+        out.println("Введите n - знаменатель дроби 1/n");
         int n = in.nextInt(); // Вводим знаменатель дроби
         int e = 1;
         while (n % 2 == 0 || n % 5 == 0) { // Избавляем знаменатель от множителей 2 и 5
