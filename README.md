@@ -51,30 +51,29 @@
    
 ### 5. Программа
 
-Полный текст программы с комментариями на русском языке
-
 ```java
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Task1 {
+public class T1 {
     public static Scanner in = new Scanner(System.in);
     public static PrintStream out = System.out;
     static String dv(int a){
         if (a == 0)
-            return "";
-        return dv(a/2) + ""  + a%2; // Это рекурентная функция, которая вычисляет двоичную форму записи числа и запоминает её как строку.
+            return " ";
+        return dv(a/2) + " "  + a % 2;
     }
+
     public static void main(String[] args) {
-        int q = in.nextInt(); // Ввод длины последовательности.
-        for (int i = 1; i<=q; i++){
-            String w = dv(i); // Вызов функции, возвращающей двоичную форму записи числа.
-            int e = 0; // Счетчик количества единиц.
-            for (int j = 0; j < w.length(); j++){ // В цикле проходим по двоичному числу и считаем количество единиц в нем.
+        int n = in.nextInt();
+        for (int i = 1; i <= n; i++){
+            String w = dv(i);
+            int q = 0;
+            for (int j = 0; j < w.length(); j++){
                 if (w.charAt(j) == '1')
-                    e++;
+                    q++;
             }
-            out.print(e + ", "); // Выводим количество единиц для каждого числа.
+            out.print(q + " ");
         }
     }
 }
